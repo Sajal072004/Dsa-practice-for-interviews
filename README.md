@@ -12,23 +12,18 @@ This repository is designed to help anyone preparing for coding interviews with 
 
 The repository is organized by **Company** and within each company's folder, you will find:
 
-1. **Problems** - The question statement, constraints, and edge cases.
-2. **Solutions** - My approach to solving the problem, explained with time and space complexity analysis.
-3. **Code** - Clean, readable code implementations of the solutions in Python, C++, or JavaScript (or any other relevant languages).
+1. **Solutions** - My approach to solving the problem, explained with time and space complexity analysis.
+2. **Code** - Clean, readable code implementations of the solutions in Python, C++, or JavaScript (or any other relevant languages).
 
 ### Example Structure:
 
 ```
 |-- Google/
-|   |-- Problem_1.md
 |   |-- Solution_1.cpp
-|   |-- Problem_2.md
-|   |-- Solution_2.py
+|   |-- Solution_2.cpp
 |
 |-- Amazon/
-|   |-- Problem_1.md
-|   |-- Solution_1.js
-|   |-- Problem_2.md
+|   |-- Solution_1.cpp
 |   |-- Solution_2.cpp
 ```
 
@@ -49,29 +44,6 @@ For each company, I focus on the most common question patterns that are frequent
 3. **Practice Your Own**: After understanding the approach, try implementing the solution on your own to solidify your knowledge.
 4. **Engage**: Feel free to contribute by solving more questions, suggesting optimizations, or asking questions.
 
-## 🏆 Companies Covered So Far:
-
-- Google
-- Amazon
-- Microsoft
-- Facebook (Meta)
-- Netflix
-- Apple
-- and many more to come...
-
-## 📈 Progress Tracker
-
-I'll be updating this repository regularly with new questions and solutions as I continue my preparation journey.
-
-| Company     | Questions Solved |
-|-------------|------------------|
-| Google      | 20               |
-| Amazon      | 15               |
-| Microsoft   | 12               |
-| Facebook    | 10               |
-| Netflix     | 8                |
-
-Stay tuned for updates as I conquer more problems across various companies!
 
 ## 🤝 Contributions
 
