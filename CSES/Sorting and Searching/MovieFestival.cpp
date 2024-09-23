@@ -112,21 +112,27 @@ int binarySearch(vi &arr, int target) {
 
 
 int main(){
-    int t; cin>>t; 
-    while(t--){
-      int n,k; cin >> n >> k;
-      vi arr(n); 
-      vin(arr,n);
-      int sum = 0; int ans = 0;
-      for(auto it : arr){
-        if(it >= k) sum += it;
-        else if(it == 0){
-          if(sum > 0) {
-            ans++; sum--;
-          }
-        }
-      }
-      cout << ans << endl;
+
+  ll n ; cin >> n;
+  vector<pair<ll,ll>> arr(n);
+
+  for(ll i = 0; i<n; i++){
+    cin >> arr[i].first; cin >> arr[i].second;
+  }
+
+  sort(arr.begin() , arr.end(), [](pair<ll,ll>&a , pair<ll,ll>&b) {
+    return a.second < b.second;
+  });
+  ll ans = 1; 
+
+  ll end = arr[0].second;
+
+  for(ll i = 1; i<n; i++){
+    if(arr[i].first >= end){
+      ans++; end = arr[i].second;
     }
+  }
+  cout << ans << endl;
+ 
 
 }

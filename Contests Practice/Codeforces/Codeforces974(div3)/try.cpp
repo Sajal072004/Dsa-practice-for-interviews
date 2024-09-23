@@ -112,21 +112,6 @@ int binarySearch(vi &arr, int target) {
 
 
 int main(){
-    int t; cin>>t; 
-    while(t--){
-      int n,k; cin >> n >> k;
-      vi arr(n); 
-      vin(arr,n);
-      int sum = 0; int ans = 0;
-      for(auto it : arr){
-        if(it >= k) sum += it;
-        else if(it == 0){
-          if(sum > 0) {
-            ans++; sum--;
-          }
-        }
-      }
-      cout << ans << endl;
-    }
+ 
 
 }
