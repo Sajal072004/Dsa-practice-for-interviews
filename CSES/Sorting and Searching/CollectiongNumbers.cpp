@@ -1,130 +1,54 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #define ll long long
-#define vi vector<int>
-#define vl vector<long long>
-#define vpii vector<pair<int,int>>
-#define vvi vector<vector<int>>
-#define vvl vector<vector<long long>>
-#define pb push_back
-#define all(x) x.begin(), x.end()
-#define sz(x) (int)(x.size())
-#define vin(arr,n) for(int i = 0; i<n; i++) cin >> arr[i];
-#define vout(arr) for(auto x : arr) cout << x << " ";
-#define fast_io ios_base::sync_with_stdio(false); cin.tie(NULL);
-#define vpin(arr,n) for(int i = 0; i<n; i++){ cin >> arr[i].first; cin >> arr[i].second; }
+int main()
+{
+     ios_base::sync_with_stdio(false);
+     cin.tie(NULL);
+     int n, k, a, b, pass = 0;
+     cin >> n >> k;
+     vector<int> numbers(n + 1);
+     vector<int> location(n + 1);
+     map<int, int> numpairs;
+     for (int i = 1; i <= n; i++)
+     {
+          cin >> numbers[i];
+          location[numbers[i]] = i;
+     }
 
-const int MOD = 1e9 + 7;
-const ll INF = 1e18;
+     for (int i = 1; i < n; i++)
+          if (location[i + 1] < location[i])
+               pass++;
+     pass++;
 
-// GCD function (Euclidean algorithm)
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a % b) : a;
-}
+     while (k--)
+     {
+          cin >> a >> b;
 
-// LCM function
-ll lcm(ll a, ll b) {
-    return (a / gcd(a, b)) * b;
-}
+          // put the numbers but we will check for boundary cond
 
-// Power function (modular exponentiation)
-ll power(ll a, ll b, ll mod = MOD) {
-    ll res = 1;
-    while (b > 0) {
-        if (b % 2 == 1) res = (res * a) % mod;
-        a = (a * a) % mod;
-        b /= 2;
-    }
-    return res;
-}
+          if (numbers[a] - 1 >= 1)
+               numpairs.insert({numbers[a] - 1, numbers[a]});
+          if (numbers[a] + 1 <= n)
+               numpairs.insert({numbers[a], numbers[a] + 1});
+          if (numbers[b] - 1 >= 1)
+               numpairs.insert({numbers[b] - 1, numbers[b]});
+          if (numbers[b] + 1 <= n)
+               numpairs.insert({numbers[b], numbers[b] + 1});
 
-// Check if a number is prime
-bool isPrime(ll n) {
-    if (n <= 1) return false;
-    if (n <= 3) return true;
-    if (n % 2 == 0 || n % 3 == 0) return false;
-    for (ll i = 5; i * i <= n; i += 6) {
-        if (n % i == 0 || n % (i + 2) == 0) return false;
-    }
-    return true;
-}
+          for (auto it = numpairs.begin(); it != numpairs.end(); it++)
+               if (location[it->first] > location[it->second])
+                    pass--;
 
-// Factorial function with modulo
-ll factorial(ll n, ll mod = MOD) {
-    ll res = 1;
-    for (ll i = 2; i <= n; i++) {
-        res = (res * i) % mod;
-    }
-    return res;
-}
+          swap(numbers[a], numbers[b]);
+          location[numbers[a]] = a;
+          location[numbers[b]] = b;
 
-// nCr (combinations) function using Fermat's Little Theorem
-ll modInverse(ll a, ll mod = MOD) {
-    return power(a, mod - 2, mod); // Fermat's Little Theorem for mod inverse
-}
+          for (auto it = numpairs.begin(); it != numpairs.end(); it++)
+               if (location[it->first] > location[it->second])
+                    pass++;
 
-ll nCr(ll n, ll r, ll mod = MOD) {
-    if (r > n) return 0;
-    ll num = factorial(n, mod);
-    ll denom = (factorial(r, mod) * factorial(n - r, mod)) % mod;
-    return (num * modInverse(denom, mod)) % mod;
-}
-
-// Sieve of Eratosthenes to generate primes up to a limit
-vector<bool> sieve(int n) {
-    vector<bool> is_prime(n + 1, true);
-    is_prime[0] = is_prime[1] = false;
-    for (int i = 2; i * i <= n; i++) {
-        if (is_prime[i]) {
-            for (int j = i * i; j <= n; j += i) {
-                is_prime[j] = false;
-            }
-        }
-    }
-    return is_prime;
-}
-
-// Find all divisors of a number
-vi divisors(int n) {
-    vi divs;
-    for (int i = 1; i * i <= n; i++) {
-        if (n % i == 0) {
-            divs.pb(i);
-            if (i != n / i) divs.pb(n / i);
-        }
-    }
-    sort(all(divs));
-    return divs;
-}
-
-// Binary search for a specific condition
-int binarySearch(vi &arr, int target) {
-    int low = 0, high = sz(arr) - 1;
-    while (low <= high) {
-        int mid = (low + high) / 2;
-        if (arr[mid] == target) return mid;
-        else if (arr[mid] < target) low = mid + 1;
-        else high = mid - 1;
-    }
-    return -1; // Target not found
-}
-
-
-int main(){
- 
-  int n; cin>>n;
-  vl arr(n); vin(arr,n);
-
-  vl mp(n+1);
-  for(int i = 0; i<n; i++) mp[arr[i]] = i;
-
-  ll ans = 1; 
-  for(int i = 1; i<n; i++){
-    if(mp[i+1] < mp[i]) ans++;
-  } 
-
-  cout << ans << endl;
-  
-
+          cout << pass << "\n";
+          numpairs.clear();
+     }
 }
