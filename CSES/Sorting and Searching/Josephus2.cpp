@@ -112,25 +112,8 @@ int binarySearch(vi &arr, int target) {
 
 
 int main(){
-  
-  ll n,k ; cin >> n >> k;
-  queue<ll>q;
-  for(int i = 1; i<=n; i++) q.push(i);
-  bool flag = false;
-  while(!q.empty()){
-    if(flag){
-      cout << q.front() << " "; q.pop(); flag = false;
-    }
-    else {
-      int z = k;
-      
-      while(z--){
-        int x = q.front(); q.pop(); q.push(x);
-      }
-      flag = true;
-    }
-  }
-  cout << endl;
-
-
+ 
+  ll n,k; cin>> n >>k;
+  unordred_set<ll>st;
+  for(ll i = 1; i<=n; )
 }
