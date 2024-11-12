@@ -1,3 +1,5 @@
+//brute force
+
 class Solution
 {
 public:
@@ -24,4 +26,36 @@ public:
       ans.push_back(it);
     return ans;
   }
+};
+
+//optimised
+
+class Solution {
+public:
+    vector<int> pivotArray(vector<int>& nums, int pivot) {
+        int lessCount = 0, equalCount = 0;
+
+      
+        for (int num : nums) {
+            if (num < pivot) lessCount++;
+            else if (num == pivot) equalCount++;
+        }
+
+        // Create the result vector with the correct size
+        vector<int> ans(nums.size());
+        int leftIndex = 0, midIndex = lessCount, rightIndex = lessCount + equalCount;
+
+        // Place elements in the appropriate positions
+        for (int num : nums) {
+            if (num < pivot) {
+                ans[leftIndex++] = num;
+            } else if (num == pivot) {
+                ans[midIndex++] = num;
+            } else {
+                ans[rightIndex++] = num;
+            }
+        }
+
+        return ans;
+    }
 };
