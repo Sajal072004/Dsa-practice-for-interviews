@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
+#define ll long long int
 #define vi vector<int>
-#define vl vector<long long>
+#define vl vector<long long int>
 #define vpii vector<pair<int, int>>
 #define vvi vector<vector<int>>
-#define vvl vector<vector<long long>>
+#define vvl vector<vector<long long int>>
 #define pb push_back
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)(x.size())
@@ -16,8 +16,7 @@ using namespace std;
 #define vout(arr)    \
   for (auto x : arr) \
     cout << x << " ";
-#define fast_io                     \
-  ios_base::sync_with_stdio(false); \
+#define fast_io                        ios_base::sync_with_stdio(false); \
   cin.tie(NULL);
 #define vpin(arr, n)          \
   for (int i = 0; i < n; i++) \
@@ -153,26 +152,47 @@ int binarySearch(vi &arr, int target)
 int main()
 {
 
+  fast_io;
   ll t;
   cin >> t;
+
   while (t--)
   {
-    ll n, k;
-    cin >> n >> k;
-    vl arr(n * k + 1);
-    
-    for(int i = 1; i <= n*k; i++) cin >> arr[i];
-    ll ans = 0; 
 
-    ll x = (n+1)/2 - 1;
-    x = n-x;
-    ll j = n*k+1;
+    ll a, b;
+    cin >> a >> b;
+    ll xk, yk;
+    cin >> xk >> yk;
+    ll xq, yq;
+    cin >> xq >> yq;
+
+
     
-    while(k --){
-      j -= x;
-      if(j<= 0) break;
-      ans += arr[j];
-    }
-    cout << ans << endl;   
+
+    vector<ll> dx = {a, a, -a, -a, b, b, -b, -b};
+    vector<ll> dy = {b, -b, b, -b, a, -a, a, -a};
+
+    set<pair<ll,ll>> kingMoves, queenMoves;
+
+for(ll i = 0; i<8; i++){
+    ll nx = xk + dx[i];
+    ll ny = yk + dy[i];
+    kingMoves.insert({nx, ny});
+}
+
+for(ll i = 0; i<8; i++){
+    ll nx = xq + dx[i];
+    ll ny = yq + dy[i];
+    queenMoves.insert({nx, ny});
+}
+
+ll ans = 0;
+for (auto &cell : kingMoves) {
+    if (queenMoves.count(cell)) ans++;
+}
+
+cout << ans << endl;
+
+
   }
 }

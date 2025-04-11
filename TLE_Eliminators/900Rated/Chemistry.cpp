@@ -112,35 +112,28 @@ int binarySearch(vi &arr, int target) {
 
 
 int main(){
- ll t; 
- cin>> t;
- while(t--){
-  string s; cin >> s;
-  unordered_map<char,int>mp;
-  for(auto x : s){
-    mp[x]++;
+  fast_io;
+
+  ll t; cin >> t;
+  while(t--){
+    ll n,k; 
+    cin>> n >> k;
+    string s; cin >> s;
+
+    unordered_map<char,ll>mp;
+    for(auto it : s) mp[it]++;
+
+    ll cnt = 0; 
+    for(auto it : mp){
+      if(it.second & 1) cnt++;
+    }
+
+    if(cnt > k+1) cout << "NO" << endl;
+    else cout << "YES" << endl;
+
+
   }
 
-  int ans = 0;
-
-  for(int i = 0; i<s.size(); i++){
-    if(s[i] == '1' && mp['0'] > 0){
-      mp['0']--;
-    }
-    else if(s[i] == '0' && mp['1'] > 0){
-      mp['1']--;
-    }
-    else {
-      ans += s.size() - i;
-      break;
-    }
-  }
-  cout << ans << endl;
-
-
-  
-
-  
- }
+ 
 
 }
