@@ -111,20 +111,29 @@ int binarySearch(vi &arr, int target) {
 }
 
 
+
+
 int main(){
  
-    ll n,k; cin >> n >> k;
-    int curr = k;
-    int cnt = 0;
-    int prevValue = 1;
+  ll t; cin >>t;
+  while(t--){
+    ll n,x; cin >> n >> x;
+    vl arr(n);
+    vin(arr,n);
 
-    while(cnt < n){
-        int temp = (prevValue + curr)%(n+1);
-        cout << temp << " ";
-        curr++;
-        cnt++;
-        prevValue = temp%(n+1);
+    ll ans = 0;
+
+    for(ll i = 1; i<n; i++){
+      ans = max(ans, arr[i]-arr[i-1]);
     }
 
-  
+    if(n == 1) cout << max(arr[0], 2*(x- arr[0])) << endl;
+    else {
+    ans = max(ans, 2*(x-arr[n-1]));
+    ans = max(ans,arr[0]);
+    cout << ans << endl;
+
+    }
+
+  }
 }

@@ -2,6 +2,7 @@
 using namespace std;
 
 #define ll long long
+#define lli long long int
 #define vi vector<int>
 #define vl vector<long long>
 #define vpii vector<pair<int,int>>
@@ -112,19 +113,18 @@ int binarySearch(vi &arr, int target) {
 
 
 int main(){
- 
-    ll n,k; cin >> n >> k;
-    int curr = k;
-    int cnt = 0;
-    int prevValue = 1;
-
-    while(cnt < n){
-        int temp = (prevValue + curr)%(n+1);
-        cout << temp << " ";
-        curr++;
-        cnt++;
-        prevValue = temp%(n+1);
-    }
-
   
+  ll t; cin>>t;
+  while(t--){
+    ll n,k; cin >> n >> k;
+    vl arr(n);
+    vin(arr,n);
+
+    vl temp = arr;
+    sort(all(temp));
+
+    if(k == 1 && (temp != arr)) cout << "NO" << endl;
+    else cout << "YES" << endl;
+  }
+
 }
