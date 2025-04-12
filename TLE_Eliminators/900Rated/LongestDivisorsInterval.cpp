@@ -11,24 +11,15 @@ using namespace std;
 #define all(x) x.begin(), x.end()
 #define sz(x) (int)(x.size())
 #define vin(arr,n) for(int i = 0; i<n; i++) cin >> arr[i];
-#define vout(arr) for(auto x : arr) cout << x << " ";
+#define vout(arr) for(auto x : arr) cout << x << " "; cout << endl;
 #define fast_io ios_base::sync_with_stdio(false); cin.tie(NULL);
 #define vpin(arr,n) for(int i = 0; i<n; i++){ cin >> arr[i].first; cin >> arr[i].second; }
 
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
 
-// GCD function (Euclidean algorithm)
-ll gcd(ll a, ll b) {
-    return b ? gcd(b, a % b) : a;
-}
-
-// LCM function
-ll lcm(ll a, ll b) {
-    return (a / gcd(a, b)) * b;
-}
-
-// Power function (modular exponentiation)
+ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; }
+ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
 ll power(ll a, ll b, ll mod = MOD) {
     ll res = 1;
     while (b > 0) {
@@ -38,8 +29,6 @@ ll power(ll a, ll b, ll mod = MOD) {
     }
     return res;
 }
-
-// Check if a number is prime
 bool isPrime(ll n) {
     if (n <= 1) return false;
     if (n <= 3) return true;
@@ -49,8 +38,6 @@ bool isPrime(ll n) {
     }
     return true;
 }
-
-// Factorial function with modulo
 ll factorial(ll n, ll mod = MOD) {
     ll res = 1;
     for (ll i = 2; i <= n; i++) {
@@ -58,20 +45,13 @@ ll factorial(ll n, ll mod = MOD) {
     }
     return res;
 }
-
-// nCr (combinations) function using Fermat's Little Theorem
-ll modInverse(ll a, ll mod = MOD) {
-    return power(a, mod - 2, mod); // Fermat's Little Theorem for mod inverse
-}
-
+ll modInverse(ll a, ll mod = MOD) { return power(a, mod - 2, mod); }
 ll nCr(ll n, ll r, ll mod = MOD) {
     if (r > n) return 0;
     ll num = factorial(n, mod);
     ll denom = (factorial(r, mod) * factorial(n - r, mod)) % mod;
     return (num * modInverse(denom, mod)) % mod;
 }
-
-// Sieve of Eratosthenes to generate primes up to a limit
 vector<bool> sieve(int n) {
     vector<bool> is_prime(n + 1, true);
     is_prime[0] = is_prime[1] = false;
@@ -84,8 +64,6 @@ vector<bool> sieve(int n) {
     }
     return is_prime;
 }
-
-// Find all divisors of a number
 vi divisors(int n) {
     vi divs;
     for (int i = 1; i * i <= n; i++) {
@@ -97,8 +75,6 @@ vi divisors(int n) {
     sort(all(divs));
     return divs;
 }
-
-// Binary search for a specific condition
 int binarySearch(vi &arr, int target) {
     int low = 0, high = sz(arr) - 1;
     while (low <= high) {
@@ -107,24 +83,32 @@ int binarySearch(vi &arr, int target) {
         else if (arr[mid] < target) low = mid + 1;
         else high = mid - 1;
     }
-    return -1; // Target not found
+    return -1;
 }
 
+void solve(){
+    ll n;
+    cin >> n;
+
+    ll ans = 0;
+
+    ll i = 1;
+
+    while(n%i == 0){
+      ans++;
+      i++;
+    }
+
+    cout << ans << endl;
+
+}
 
 int main(){
     fast_io;
-    ll t; cin >> t;
+    ll t;
+    cin >> t;
     while(t--){
-        ll n,k,x;
-        cin >> n >> k >> x;
-
-        ll min_sum = k * (k + 1) / 2;
-        ll max_sum = k * (2 * n - k + 1) / 2;
-
-        if(x >= min_sum && x <= max_sum) {
-            cout << "YES" << endl;
-        } else {
-            cout << "NO" << endl;
-        }
+        solve();
     }
+    return 0;
 }

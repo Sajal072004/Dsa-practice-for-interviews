@@ -112,19 +112,35 @@ int binarySearch(vi &arr, int target) {
 
 
 int main(){
-    fast_io;
-    ll t; cin >> t;
-    while(t--){
-        ll n,k,x;
-        cin >> n >> k >> x;
+  
+  fast_io;
+  ll t; cin>>t;
+  while(t--){
+    ll a,b,n; 
+    cin >> a >> b >> n;
+    vl arr(n);
+    vin(arr,n);
 
-        ll min_sum = k * (k + 1) / 2;
-        ll max_sum = k * (2 * n - k + 1) / 2;
+    sort(arr.rbegin(),arr.rend());
 
-        if(x >= min_sum && x <= max_sum) {
-            cout << "YES" << endl;
-        } else {
-            cout << "NO" << endl;
-        }
+    ll ans = 0;
+    ll i = 0;
+
+    while(i<n){
+      if(b == 1){
+        b = min(b+arr[i],a);
+        i++;
+      }
+      
+      ans += b-1;
+      b = 1;
+      
     }
+
+    cout << ans + b << endl;
+
+    
+
+  }
+
 }
