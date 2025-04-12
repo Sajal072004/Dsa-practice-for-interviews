@@ -131,27 +131,28 @@ void solve()
   vl arr(n);
   vin(arr, n);
 
-  if (n == 1)
+  map<ll, ll> mp;
+  ll maxi = 0;
+  for (auto it : arr)
   {
-    cout << 0 << endl;
-    return;
+    mp[it]++;
+    maxi = max(maxi, mp[it]);
   }
 
-  
   ll ans = 0;
-
-  for (ll i = n - 2; i >= 0; i--)
-  {
-    while(arr[i] && arr[i] >= arr[i+1]) {
-      ans ++; arr[i]/=2;
+  while(maxi < n){
+    ans++;
+    if(2*maxi < n){
+      ans += maxi; maxi*=2;
     }
-    if(arr[i] == arr[i+1]){
-      cout << -1 << endl;
-      return;
+    else {
+      ans += n-maxi; break;
     }
   }
 
   cout << ans << endl;
+
+
 }
 
 int main()

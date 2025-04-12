@@ -1,8 +1,12 @@
 {
   "files.associations": {
+    "*.sqlbook": "sql",
+    "*.ndjson": "jsonl",
+    "*.dbclient-js": "javascript",
     ".env*": "dotenv",
     "ostream": "cpp",
     "iostream": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "cmath": "cpp"
   }
 }
