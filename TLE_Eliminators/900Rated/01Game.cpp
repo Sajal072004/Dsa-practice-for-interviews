@@ -91,23 +91,19 @@ return n > 0 && (n & (n - 1)) == 0;
 }
 
 void solve(){
-    ll n, k;
-    cin >> n >> k;
-    vl arr(n * k + 1);
-    
-    for(int i = 1; i <= n*k; i++) cin >> arr[i];
-    ll ans = 0; 
- 
-    ll x = (n+1)/2 - 1;
-    x = n-x;
-    ll j = n*k+1;
-    
-    while(k --){
-      j -= x;
-      if(j<= 0) break;
-      ans += arr[j];
+    string s; cin >> s;
+    ll one = 0; ll zero = 0;
+    for(auto it : s){
+      if(it == '0') zero++;
+      else one++;
     }
-    cout << ans << endl;   
+
+    ll x = min(one,zero);
+
+    if(x&1) cout << "DA" << endl;
+    else cout << "NET" << endl;
+
+     
 
 }
 

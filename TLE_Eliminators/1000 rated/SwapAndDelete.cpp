@@ -91,23 +91,32 @@ return n > 0 && (n & (n - 1)) == 0;
 }
 
 void solve(){
-    ll n, k;
-    cin >> n >> k;
-    vl arr(n * k + 1);
-    
-    for(int i = 1; i <= n*k; i++) cin >> arr[i];
-    ll ans = 0; 
- 
-    ll x = (n+1)/2 - 1;
-    x = n-x;
-    ll j = n*k+1;
-    
-    while(k --){
-      j -= x;
-      if(j<= 0) break;
-      ans += arr[j];
+    string s; cin >> s;
+    ll cnt1 = 0;
+    for(auto it : s) {
+      if(it == '1') cnt1++;
     }
-    cout << ans << endl;   
+    ll cnt0 = s.size() - cnt1;
+
+    for(ll i = 0; i<s.size(); i++){
+      if(s[i] == '1'){
+        if(cnt0 == 0) {
+          cout << s.size() - (i) << endl;
+          return;
+        }
+        cnt0--;
+      }
+      else {
+        if(cnt1 == 0){
+          cout << s.size() - (i) << endl;
+          return;
+        }
+        cnt1--;
+      }
+    }
+
+    cout << 0 << endl;
+    
 
 }
 
