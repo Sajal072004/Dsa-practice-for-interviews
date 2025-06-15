@@ -1,21 +1,28 @@
+Here's a **rewritten and improved version** of your README, reflecting that you're tracking all DSA and competitive programming practice — **company-wise, topic-wise, and contest-based** — in a more structured and engaging way:
 
+---
 
-# 🚀 Company-Wise DSA Questions Repository
+# 🚀 DSA & Competitive Programming Practice Tracker
 
-Welcome to my **Company-Wise DSA Questions Repository**! 🎯 This repository is my personal collection of curated and solved DSA questions, categorized by the companies that frequently ask them in technical interviews.
+Welcome to my **DSA & Competitive Programming Repository**! 💻✨
+This is my personal hub for all the coding problems I've solved — organized by **company**, **topic**, and **contest sheets** like the CP31 Sheet by TLE Eliminator.
+
+---
 
 ## 🎯 Purpose
 
-This repository is designed to help anyone preparing for coding interviews with top tech companies. By sharing my journey and solutions, I hope to provide a structured pathway to cracking those tough interviews and gaining a deeper understanding of core data structures and algorithms.
+This repository is designed to **track and structure my DSA and CP journey**, whether it's interview prep for top tech companies, topic-wise mastery of data structures and algorithms, or upsolving problems from contests.
+If you're preparing for interviews or aiming to improve in competitive programming, you'll find this collection useful and organized.
+
+---
 
 ## 📁 Repository Structure
 
-The repository is organized by **Company** and within each company's folder, you will find:
+The repository is categorized in the following ways:
 
-1. **Solutions** - My approach to solving the problem, explained with time and space complexity analysis.
-2. **Code** - Clean, readable code implementations of the solutions in Python, C++, or JavaScript (or any other relevant languages).
+### 📌 Company-Wise
 
-### Example Structure:
+Coding problems that have been asked in interviews by specific companies like Google, Amazon, Microsoft, etc.
 
 ```
 |-- Google/
@@ -27,24 +34,58 @@ The repository is organized by **Company** and within each company's folder, you
 |   |-- Solution_2.cpp
 ```
 
-## 🧠 Key Insights
+### 📘 Topic-Wise
 
-For each company, I focus on the most common question patterns that are frequently asked. You'll find detailed explanations of **patterns** such as sliding windows, binary search, dynamic programming, and more. Each solution is written with clarity and precision to align with real-world interview expectations.
+To focus on core concepts like binary search, graphs, dynamic programming, and more.
+
+```
+|-- Graphs/
+|   |-- DFS.cpp
+|   |-- BFS.cpp
+|
+|-- DynamicProgramming/
+|   |-- Knapsack.cpp
+|   |-- LIS.cpp
+```
+
+### 🧾 CP31 Sheet & Contests
+
+Problems from well-known sheets and upsolved contests.
+
+```
+|-- CP31_Sheet/
+|   |-- BinarySearch/
+|   |-- DP/
+|
+|-- Upsolved_Contests/
+|   |-- Codeforces/
+|   |-- AtCoder/
+|   |-- CodeChef/
+```
+
+---
 
 ## 🌟 Why This Matters?
 
-- **Company Focused**: You get insights into the specific types of problems each company prioritizes, which can give you an edge during preparation.
-- **In-Depth Explanations**: My solutions go beyond code, offering step-by-step breakdowns of the problem-solving process.
-- **Real Interview Prep**: These questions have been sourced from actual interviews, making this a valuable resource for serious contenders.
+* **Multiple Perspectives**: Whether you're targeting a company, mastering a topic, or competing — there's something for each track.
+* **In-Depth Solutions**: Each solution is written with clarity, explaining the approach, edge cases, and time-space complexity.
+* **Progress Tracking**: This helps me stay consistent while giving back to others preparing like me.
 
-## 💡 How to Use This Repository?
+---
 
-1. **Explore by Company**: Choose a company you're targeting and dive into the questions relevant to that company.
-2. **Review Solutions**: Study the solutions, paying attention to edge cases and optimization strategies.
-3. **Practice Your Own**: After understanding the approach, try implementing the solution on your own to solidify your knowledge.
-4. **Engage**: Feel free to contribute by solving more questions, suggesting optimizations, or asking questions.
+## 💡 How to Use This Repo?
 
+1. **Pick Your Track**: Company, topic, or CP sheet — choose based on your goal.
+2. **Read & Understand**: Go through the solutions with explanations and complexities.
+3. **Practice Independently**: After reading the solution, try solving it yourself without peeking.
+4. **Upsolve Regularly**: Check out the upsolved contest sections for missed problems and retry.
 
-## 🤝 Contributions
+---
 
-If you'd like to contribute by sharing your own solutions or discussing alternative approaches, feel free to submit a PR! Let's help the community grow together.
+## 🤝 Contributions Welcome!
+
+If you're on a similar journey and want to share your own solutions or suggest improvements, feel free to submit a PR. Let’s grow together as a community of problem solvers! 🚀
+
+---
+
+Let me know if you’d like badges, shields, or visual enhancements (like a table of contents or GitHub stats) added to this too.
