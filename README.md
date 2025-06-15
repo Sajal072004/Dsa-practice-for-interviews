@@ -1,6 +1,4 @@
-Here's a **rewritten and improved version** of your README, reflecting that you're tracking all DSA and competitive programming practice — **company-wise, topic-wise, and contest-based** — in a more structured and engaging way:
 
----
 
 # 🚀 DSA & Competitive Programming Practice Tracker
 
