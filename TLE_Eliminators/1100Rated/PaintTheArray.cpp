@@ -461,6 +461,14 @@ public:
     }
 };
 
+ll rangeGCD(const vector<ll>& a,ll start = 1, ll k = 1) {
+    ll result = a[0];
+    for (ll i = start; i < a.size(); i += k) {
+        result = gcd(result, a[i]);
+    }
+    return result;
+}
+
 // Graph utilities for 1-based indexing
 void dfs(ll u, vvl &adj, vector<bool> &visited) {
     visited[u] = true;
@@ -561,18 +569,35 @@ void solve(){
     cin >> n;
     vl arr(n+1);
     vin(arr, n);
-    reverse(arr.begin()+1, arr.end());
 
-    ll x = 1; ll ans = 0;
-    while(x<n){
-        if(arr[x+1] == arr[1]){
-            x++; continue;
+    ll odd  = rangeGCD(arr,1,2);
+    ll even = rangeGCD(arr,2,2);
+
+    bool flag = true;
+    for(ll i = 1; i<=n; i+=2){
+        if((arr[i]%even) == 0){
+            flag = false; break;
         }
-        x*=2; 
-        ans++;
     }
-    cout << ans << endl;
-  
+    if(flag){
+        cout << even << endl; return;
+    }
+
+    flag = true;
+    for(ll i = 2; i<=n; i+=2){
+        if((arr[i]%odd) == 0){
+            flag = false; break;
+        }
+    }
+    if(flag) cout << odd << endl;
+    else cout<< 0 << endl;
+
+
+
+
+    
+
+
 }
 
 int main(){
