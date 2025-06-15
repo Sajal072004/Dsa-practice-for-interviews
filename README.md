@@ -1,9 +1,11 @@
+Here's a **rewritten and improved version** of your README, reflecting that you're tracking all DSA and competitive programming practice — **company-wise, topic-wise, and contest-based** — in a more structured and engaging way:
 
+---
 
 # 🚀 DSA & Competitive Programming Practice Tracker
 
 Welcome to my **DSA & Competitive Programming Repository**! 💻✨
-This is my personal hub for all the coding problems I've solved — organized by **company**, **topic**, and **contest sheets** like the CP31 Sheet by TLE Eliminator.
+This is my personal hub for all the coding problems I've solved — organized by **company**, **topic**, and **contest sheets** like the CP21 Sheet by TLE Eliminator.
 
 ---
 
@@ -51,7 +53,7 @@ To focus on core concepts like binary search, graphs, dynamic programming, and m
 Problems from well-known sheets and upsolved contests.
 
 ```
-|-- CP31_Sheet/
+|-- CP21_Sheet/
 |   |-- BinarySearch/
 |   |-- DP/
 |
