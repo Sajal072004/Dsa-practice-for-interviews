@@ -5,7 +5,7 @@ using namespace std;
 #define fast_io ios::sync_with_stdio(false); cin.tie(NULL);
 
 ll lcm(ll a, ll b) {
-    return a / __gcd(a, b) * b;
+    return (a * b)/ __gcd(a, b);
 }
 
 void solve() {
