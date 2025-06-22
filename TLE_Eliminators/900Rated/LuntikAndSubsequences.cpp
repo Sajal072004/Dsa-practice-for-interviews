@@ -92,25 +92,23 @@ void solve(){
     vl arr(n);
     vin(arr, n);
 
-    ll one = 0,zero = 0;
+    ll countOne = 0, countZero = 0;
     
     for(auto it : arr){
-      if(it == 1) one++;
-      else if(it == 0) zero++;
+        if(it == 1) countOne++;
+        else if(it == 0) countZero++;
     } 
 
-    
-    cout << (1LL << zero)*one << endl;
-    
-
+    // Safer calculation to avoid overflow
+    ll result = power(2, countZero) * countOne;
+    cout << result << endl;
 }
 
 int main(){
-    fast_io;
-    ll t;
-    cin >> t;
+    ll t; cin >> t;
     while(t--){
         solve();
     }
     return 0;
 }
+
