@@ -7,7 +7,7 @@ This is my personal hub for all the coding problems I've solved — organized by
 
 ## 🎯 Purpose
 
-This repository is designed to **track and structure my DSA and CP journey**, whether it's interview prep for top tech companies, topic-wise mastery of data structures and algorithms, or upsolving problems from contests.
+This repository is designed to **track and structure my DSA and CP journey**, whether it's interview prep for top tech companies, topic-wise mastery of data structures and algorithms, or upsolving problems from contests
 If you're preparing for interviews or aiming to improve in competitive programming, you'll find this collection useful and organized.
 
 ---
