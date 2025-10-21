@@ -385,9 +385,27 @@ ll countSetBits(ll n) { return __builtin_popcountll(n); }
 void solve(){
     ll n;
     cin >> n;
-    vl arr(n+1);
-    vin(arr, n);
+    vl a(n+1);
+    vin(a, n);
+    vl b(n+1);
+    vin(b,n);
+    ll maxi = INT_MIN;
 
+    for(ll i = 1; i<=n; i++){
+        maxi = max(maxi , a[i] - b[i]);
+    }
+
+    vl ans;
+
+    for(ll i = 1; i<=n; i++){
+        if(a[i]-b[i] == maxi) ans.push_back(i);
+    }
+
+    cout << ans.size() << endl;
+    for(auto it : ans){
+        cout << it << " ";
+    }
+    cout << endl;
 }
 
 int main(){
