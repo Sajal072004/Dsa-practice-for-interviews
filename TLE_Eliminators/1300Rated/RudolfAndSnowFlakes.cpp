@@ -396,20 +396,16 @@ int main(){
 
     ll k = 2;
     unordered_set<ll>st;
-
-    for(ll k = 2; k<=1000000; k++){
-        ll val = 1+k;
-
-        ll p = k*k;
-        for(ll cnt = 3; cnt <=63; cnt++){
-            val += p;
-            if(val > 1e18) break;
+    while(k <= 10000){
+        ll val = 1 + k;
+        ll temp = k*k;
+        while(val <= 1e6){
+            val += temp;
             st.insert(val);
-            if(p > (long long)(1e18)) break;
-            p*=k;
+            temp*=k;
         }
+        k++; 
     }
-    
     while(t--){
         solve(st);
     }
